@@ -4,6 +4,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const morgan = require('morgan')
 const { Server } = require('socket.io')
+const pool = require('./config/database')
 
 require('dotenv').config({ quiet: true })
 
@@ -59,4 +60,4 @@ httpServer.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
 
-module.exports = { app, httpServer, io }
+module.exports = { app, httpServer, io, pool }
